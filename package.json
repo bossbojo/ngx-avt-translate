@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ngx:avt:translate": "ng build ngx-avt-translate && cd dist/ngx-avt-translate && npm publish"
+    "publish": "ng build ngx-avt-translate && cd dist/ngx-avt-translate && npm publish"
   },
   "private": true,
   "dependencies": {

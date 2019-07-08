@@ -7,9 +7,14 @@
   ],
   "repository": {
     "type": "github",
-    "url": "ngx"
+    "url": "https://github.com/bossbojo/ngx-avt-translate.git"
   },
-  "version": "0.0.1",
+  "version": "0.1.2",
+  "author": {
+    "url": "https://github.com/bossbojo",
+    "email": "paramat.si.56@ubu.ac.th",
+    "name": "BBJ"
+  },
   "peerDependencies": {
     "@angular/common": "^8.0.3",
     "@angular/core": "^8.0.3"

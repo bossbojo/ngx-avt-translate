@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NgxAvtTranslateModule, NgxAvtTranslateService } from 'projects/ngx-avt-translate/src/public-api';
+import { lang } from './i18n';
 
 
 @NgModule({
@@ -11,7 +12,7 @@ import { NgxAvtTranslateModule, NgxAvtTranslateService } from 'projects/ngx-avt-
   ],
   imports: [
     BrowserModule,
-    NgxAvtTranslateModule.forRoot({ jsonOject: { th: {} } })
+    NgxAvtTranslateModule.forRoot({ jsonOject: lang })
   ],
   providers: [NgxAvtTranslateService],
   bootstrap: [AppComponent]

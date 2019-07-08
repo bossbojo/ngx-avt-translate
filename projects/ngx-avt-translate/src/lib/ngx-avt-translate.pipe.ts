@@ -16,7 +16,11 @@ export class NgxAvtTranslatePipe implements PipeTransform {
     const key = value.split('.');
     let buff = this.json.jsonOject[this.getLang.getDefualtLang()];
     key.forEach(k => {
-      buff = buff[k];
+      if (buff[k]) {
+        buff = buff[k];
+      } else {
+        return value;
+      }
     });
     return buff;
   }
