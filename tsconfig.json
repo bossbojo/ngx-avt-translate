@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-avt-translate": [
+        "dist/ngx-avt-translate"
+      ],
+      "ngx-avt-translate/*": [
+        "dist/ngx-avt-translate/*"
+      ]
+    }
   }
 }

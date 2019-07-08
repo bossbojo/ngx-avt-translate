@@ -1,0 +1,17 @@
+{
+  "name": "ngx-avt-translate",
+  "keywords": [
+    "translate",
+    "angular",
+    "avesta.co.th"
+  ],
+  "repository": {
+    "type": "github",
+    "url": "ngx"
+  },
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^8.0.3",
+    "@angular/core": "^8.0.3"
+  }
+}
