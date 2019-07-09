@@ -1,20 +1,17 @@
-import { Pipe, PipeTransform, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { Pipe, PipeTransform, ChangeDetectorRef } from '@angular/core';
 import { JsonLang, NgxAvtTranslateService } from './ngx-avt-translate.service';
 
 @Pipe({
   name: 'toTranslate',
   pure: false
 })
-export class NgxAvtTranslatePipe implements PipeTransform, OnDestroy {
+export class NgxAvtTranslatePipe implements PipeTransform {
 
   constructor(private json: JsonLang, private getLang: NgxAvtTranslateService, private pipeRef: ChangeDetectorRef) {
     this.getLang.onChangeLang.subscribe(() => {
       // this.pipeRef.detectChanges();
       this.pipeRef.markForCheck();
     });
-  }
-  ngOnDestroy(): void {
-    this.pipeRef.detach();
   }
   transform(value: string, args?: any) {
     const key = value.split('.');

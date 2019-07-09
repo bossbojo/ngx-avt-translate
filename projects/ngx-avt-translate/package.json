@@ -1,5 +1,6 @@
 {
   "name": "ngx-avt-translate",
+  "version": "1.1.6",
   "keywords": [
     "translate",
     "angular",
@@ -9,7 +10,6 @@
     "type": "github",
     "url": "https://github.com/bossbojo/ngx-avt-translate.git"
   },
-  "version": "1.1.3",
   "author": {
     "url": "https://github.com/bossbojo",
     "email": "paramat.si.56@ubu.ac.th",

@@ -14,7 +14,7 @@ export interface SupportLang {
   providedIn: 'root'
 })
 export class NgxAvtTranslateService {
-  defualtLang: string = navigator.language.split('-')[0];
+  defualtLang = 'en';
   onChangeLang = new Subject();
   setDefualtLang(key: string) {
     this.defualtLang = key;
