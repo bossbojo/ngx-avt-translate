@@ -2,23 +2,102 @@
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project ngx-avt-translate` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-avt-translate`.
-> Note: Don't forget to add `--project ngx-avt-translate` or else it will be added to the default project in your `angular.json` file. 
+```
+npm i ngx-avt-translate --save
+```
+## Usage
 
-## Build
+### 1. Import the NgxAvtTranslateModule:
+Finally, you can use ngx-translate in your Angular project. You have to import `NgxAvtTranslateModule.forRoot()` in the root NgModule of your application.
 
-Run `ng build ngx-avt-translate` to build the project. The build artifacts will be stored in the `dist/` directory.
+The forRoot static method is a convention that provides and configures services at the same time. Make sure you only call this method in the root module of your application, most of the time called AppModule. This method allows you to configure the NgxAvtTranslateModule by specifying a loader, a parser and/or a missing translations handler.
+#### Create file `src/app/i18n/lang/en.ts`
+```ts
+export const en = {
+    title: {
+        home: 'home'
+    }
+};
+```
+#### Create file `src/app/i18n/lang/th.ts`
+```ts
+export const th = {
+    title: {
+        home: 'หน้าหลัก'
+    }
+};
+```
+#### Create file `src/app/i18n/lang/kh.ts`
+```ts
+export const kh = {
+    title: {
+        home: 'ទំព័រដើម'
+    }
+};
+```
+#### Create file `src/app/i18n/index.ts`
+```ts
+import { en } from './lang/en.lang';
+import { th } from './lang/th.lang';
+import { kh } from './lang/kh.lang';
+export const lang = { en, th, kh };
+```
+#### Update file `app.module.ts`
 
-## Publishing
+```ts
+import { NgxAvtTranslateModule, NgxAvtTranslateService } from 'ngx-avt-translate';
+import { lang } from './i18n/index.ts';
 
-After building your library with `ng build ngx-avt-translate`, go to the dist folder `cd dist/ngx-avt-translate` and run `npm publish`.
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    NgxAvtTranslateModule.forRoot({ jsonOject: lang }) /* import this module */
+  ],
+  providers: [NgxAvtTranslateService], /* use NgxAvtTranslateService */
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
-## Running unit tests
+### How to use
 
-Run `ng test ngx-avt-translate` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```html
+<p>{{ 'title.home' | toTranslate }}</p>
+```
 
-## Further help
+## How to change lang
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```ts
+  constructor(private serviceLang: NgxAvtTranslateService) { }
+
+  switchLanguage(lang: string) {
+    this.serviceLang.setDefualtLang(lang);
+  }
+
+  getLanguage() {
+    this.serviceLang.getDefualtLang();
+  }
+```
+## Support Lazyload can use forChild
+```ts
+import { NgxAvtTranslateModule } from 'ngx-avt-translate';
+
+@NgModule({
+  imports: [
+    NgxAvtTranslateModule.forChild({ jsonOject: lang }) /* import this module */
+  ],
+})
+```
+
+# Support Language
+
+* en = thailand 
+* th = thailand 
+* kh = thailand
+
+`Defualt Language follow by browser`

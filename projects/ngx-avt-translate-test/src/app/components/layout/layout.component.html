@@ -1,3 +1,10 @@
-<p>
-  layout works!
-</p>
+<a [routerLink]="['/']">{{'title.home' | toTranslate}}</a> | 
+<a [routerLink]="['about-us']">{{'title.aboutUs' | toTranslate}}</a>
+
+<div>
+  <router-outlet></router-outlet>
+</div>
+
+<button (click)="switchLanguage('th')">TH</button>
+<button (click)="switchLanguage('en')">EN</button>
+<button (click)="switchLanguage('kh')">KH</button>

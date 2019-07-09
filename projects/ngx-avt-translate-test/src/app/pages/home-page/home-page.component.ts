@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'avt-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']

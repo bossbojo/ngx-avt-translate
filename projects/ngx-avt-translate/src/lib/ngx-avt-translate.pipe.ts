@@ -22,6 +22,9 @@ export class NgxAvtTranslatePipe implements PipeTransform {
         return value;
       }
     });
+    if ((typeof buff === 'object' || typeof buff === 'function') && (buff !== null)) {
+      return value;
+    }
     return buff;
   }
 

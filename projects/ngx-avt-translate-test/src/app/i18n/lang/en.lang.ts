@@ -1,1 +1,6 @@
-export const en = {};
+export const en = {
+    title: {
+        home: 'home',
+        aboutUs: 'about us'
+    }
+};
