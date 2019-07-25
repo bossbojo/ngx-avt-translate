@@ -2,12 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
 export class JsonLang {
-  jsonOject: SupportLang = {};
-}
-export interface SupportLang {
-  th?: any;
-  en?: any;
-  kh?: any;
+  jsonOject: any = {};
 }
 
 @Injectable({

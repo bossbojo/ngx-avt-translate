@@ -1,9 +1,13 @@
 {
   "name": "ngx-avt-translate",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "keywords": [
     "translate",
     "angular",
+    "angular 8",
+    "ngx",
+    "ngx-avt-translate",
+    "ngx-translate",
     "avesta.co.th"
   ],
   "repository": {
